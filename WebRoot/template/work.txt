@@ -1,0 +1,95 @@
+//不足8未补0
+lpad(rownum, 8, '0')
+
+//with用法
+with s1 as(
+select * from WEB_CLM_ADJUST
+),s2 as (
+select * from WEB_CLM_MAIN
+)
+select s1.*,s2.* from s1,s2
+where s1.C_CLM_NO=s2.C_CLM_NO(+)
+
+//over用法
+select p.*,count(c_pk_id)over() page from web_agr_ptl p
+
+//注入指定类
+@Autowired @Qualifier("chinese")
+
+//阻止冒泡事件
+e.stopPropagation()
+
+//打印mstsc是远程登录命令
+cmd  mstsc
+
+//修改字段名
+alter table agro_dispatch_rule rename column ISSUE_DATE to INVALID_DATE;
+//添加字段
+alter table product_product add  HISTORY_TEMPLATE_AMOUNT1 number
+//删除字段
+alter table product_product drop column HISTORY_TEMPLATE_AMOUNT1
+//修改字段
+alter table product_product modify  HISTORY_TEMPLATE_AMOUNT1 number(5)
+//转换空值
+nvl(C_ISPAYMENT,'0')
+//条件判断
+decode(clmAdjustVo.C_Pay_Typ,'1','正常赔付','3','通融赔付','5','拒赔') as CPayTyp,
+//转字符串
+to_char(clmAdjustVo.T_Adjust_Tm, 'yyyy-MM-dd HH24:ss:mm') as TAdjustTm
+//转日期
+to_date('2013-12-01 00:00:00','yyyy-MM-dd HH24:mi:ss')
+---------------------------------------------
+//继承
+var a={a:'a',b:1,c:4};
+var b={a:'d',b:3};
+jQuery.extend(a, b);
+alert(a.a+','+a.b);
+
+jQuery.ajaxSetup({
+cache : false
+});
+jQuery中的mouseenter和mouseleave事件解决冒泡问题
+
+//设置不能输入中文
+ime-mode:disabled
+
+//tomcate内存不够
+-Xms128m -Xmx700m -XX:PermSize=128m -XX:MaxPermSize=700m
+
+//注解事务
+@Transactional(rollbackFor = { Exception.class })
+
+//ajax
+$.ajax({
+	type: "POST",
+	dataType: "json",
+	url: "applyQcAnceInit.do",
+	data: {name='John';location='Boston'},
+	success: function(msg){
+		alert( "Data Saved: " + msg );
+	}
+});
+//解决乱码
+encodeURI(encodeURI($("input[name='attachment']").val()));
+URLDecoder.decode(attachment,"utf-8")
+
+//截取图片第一个(-16)代表距左边边距后面那个是距上边边距
+background:url('panel_tools.gif') no-repeat -16px -16px;
+
+//文件上传
+(MultipartHttpServletRequest request) throws{
+MultipartFile mpf = request.getFile("file");
+String fileName = mpf.getOriginalFilename();
+mpf.getInputStream();
+
+//受权语句
+grant select, insert, update, delete on agro_dis_program_detail to AGRO_CLAIM_OPR;
+
+//创建同义词
+create synonym agro_dis_program_detail for AGRO_CLAIM_DATA.agro_dis_program_detail;
+
+//分页
+select *
+  from (select rownum r, w.* from wf_task w)
+ where r > 0
+   and r <= 10;
